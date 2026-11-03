@@ -1,0 +1,213 @@
+# -*- coding: utf-8 -*-
+"""黄灯 / 红灯 / 长期建议 / macOS 规则表。
+
+黄灯（需人工判断）用 match 通配定位路径，引擎实测体积后套用模板；
+红灯（谨慎清理）多数由 analyze.py 自动识别（如重复版本目录），静态项也在此表。
+"""
+
+YELLOW_WIN = [
+    {
+        "key": "recycle_bin",
+        "match": ["C:/$Recycle.Bin"],
+        "title": "回收站",
+        "type": "回收站",
+        "desc": "回收站里压着已删除的文件（C 盘所有用户共用，这里统计的是本机最大的 SID 目录）。"
+                "这是单项可回收空间里最靠前的一块，但能否清空完全取决于里面还有没有要找回的东西。",
+        "risk": "清空后文件不可恢复。",
+        "steps": ["双击桌面「回收站」图标，按「原位置」排序，先确认有没有要还原的文件（右键 → 还原）。",
+                  "确认没有要留的，右键「清空回收站」，或执行下面的命令一次性清空 C 盘回收站。",
+                  "只想清 C 盘、保留其他盘回收站的，用命令方式更精确。"],
+        "commands": [{"label": "清空 C 盘回收站（不可恢复）",
+                      "cmd": "Clear-RecycleBin -DriveLetter C -Force"}],
+        "open_note": "回收站是系统受保护目录，直接浏览只会看到内部命名文件——"
+                     "正确方式是打开桌面「回收站」图标查看原始文件名。",
+        "openable": False,
+        "hide": [("c_root", "$Recycle.Bin")],
+    },
+    {
+        "key": "android_avd",
+        "match": ["%USERPROFILE%/.android/avd/*.avd"],
+        "title": "Android 模拟器虚拟设备（AVD）",
+        "type": "虚拟机镜像",
+        "desc": "模拟器设备目录，主体是 userdata 镜像与 snapshots 快照。这是你装过的 App、"
+                "登录状态和快照，删掉等于把手机恢复出厂。",
+        "risk": "删除 AVD 会丢失模拟器内的一切数据（应用、登录、截图），但不影响 Android Studio 与真机调试。",
+        "steps": ["还在用模拟器：Android Studio → Device Manager → Wipe Data 清空数据分区，"
+                  "或只删快照（丢掉「秒开」状态，保留系统与应用）。",
+                  "不再用模拟器：Device Manager 选中设备 → Delete，会把镜像一起删干净。",
+                  "只想临时省空间：删 snapshots 目录，设备数据不动（可用下面的按钮移入回收站）。"],
+        "trash_globs": ["%USERPROFILE%/.android/avd/*/snapshots"],
+        "hide": [("user_profile", ".android")],
+    },
+    {
+        "key": "tencent",
+        "match": ["%APPDATA%/Tencent", "%USERPROFILE%/Documents/WeChat Files",
+                  "%USERPROFILE%/Documents/xwechat_files"],
+        "title": "腾讯系应用数据（微信 / 会议 / WeGame）",
+        "type": "应用数据",
+        "desc": "微信的本地数据与聊天文件、腾讯会议录制与缓存、WeGame 数据都算在内。"
+                "属于「删了会心疼」的数据，不建议整目录处理。",
+        "risk": "直接删目录可能导致微信需要重新登录、聊天记录无法预览。",
+        "steps": ["微信内清理：设置 → 通用 → 存储空间 → 管理，按会话或文件类型删除缓存与大文件，最安全。",
+                  "腾讯会议：设置 → 录制与存储，用官方「清理缓存」入口。",
+                  "要彻底搬走：微信 设置 → 文件管理 → 更改存储位置到其他盘，新文件不再占系统盘。"],
+        "hide": [("appdata_roaming", "Tencent")],
+    },
+    {
+        "key": "browser_site_data",
+        "match": ["%LOCALAPPDATA%/Microsoft/Edge/User Data/*/IndexedDB",
+                  "%LOCALAPPDATA%/Microsoft/Edge/User Data/*/Extensions",
+                  "%LOCALAPPDATA%/Microsoft/Edge/User Data/*/ExtensionActivityEdge",
+                  "%LOCALAPPDATA%/Google/Chrome/User Data/*/IndexedDB",
+                  "%LOCALAPPDATA%/Google/Chrome/User Data/*/Extensions"],
+        "title": "浏览器站点数据与扩展",
+        "type": "浏览器数据",
+        "desc": "各网站的 IndexedDB 本地库（含离线内容）、扩展本体与扩展活动日志。"
+                "这部分不是缓存，删了会有登录状态与扩展的连带影响。",
+        "risk": "清站点数据会让部分网页应用（在线文档、网盘）退出登录或需重新同步；扩展本体删掉等于卸载。",
+        "steps": ["浏览器里 Ctrl+Shift+Del → 时间范围「所有时间」→ 只勾「Cookie 及其他网站数据」，"
+                  "清站点数据但保留书签、密码与扩展。",
+                  "不想留的扩展去 edge://extensions 或 chrome://extensions 逐个删除，比手删目录干净。",
+                  "扩展活动日志（ExtensionActivityEdge）可在浏览器完全关闭后单独删，无副作用。"],
+    },
+    {
+        "key": "jianying",
+        "match": ["%LOCALAPPDATA%/JianyingPro"],
+        "title": "剪映安装与草稿数据",
+        "type": "应用数据",
+        "desc": "Apps（多版本程序本体，升级后旧版本会残留）+ User Data（草稿、素材索引、缓存）。",
+        "risk": "删 Apps 里的旧版本目录可能让剪映打不开，别手删；草稿是真实创作内容。",
+        "steps": ["剪映内：设置 → 缓存管理 → 清理缓存（清预览与代理文件，不影响草稿）。",
+                  "草稿想省系统盘：设置 → 草稿位置 → 改到其他盘，再手动搬已有草稿文件夹。",
+                  "程序本体不要动，交给剪映自己的更新 / 卸载流程。"],
+        "hide": [("appdata_local", "JianyingPro")],
+    },
+    {
+        "key": "downloads",
+        "match": ["%USERPROFILE%/Downloads"],
+        "title": "下载文件夹",
+        "type": "下载内容",
+        "desc": "浏览器与各类工具下载的文件都堆在这里，扫描时看到的是目录总量。",
+        "risk": "里面混着安装包（可删）和你真正要留的文件（不能删），需要逐个看。",
+        "steps": ["按「修改时间」排序，先处理半年以上没动过的安装包与压缩包。",
+                  "把大文件按类型归到其他盘的分区（素材、镜像、安装包各一个目录）。",
+                  "浏览器里把下载目录直接改到其他盘，从源头避免再堆积。"],
+        "hide": [("user_profile", "Downloads")],
+    },
+    {
+        "key": "npm_global",
+        "match": ["%APPDATA%/npm"],
+        "title": "全局 npm 包安装目录",
+        "type": "开发资产",
+        "desc": "npm -g 装在这里的全局命令行工具（node_modules 本体），不是缓存，删了工具就没了。",
+        "risk": "整目录删除会让所有全局命令失效，且不会有回收站以外的补救手段。",
+        "steps": ["先看清单：npm ls -g --depth=0，把不再用的工具名记下来。",
+                  "逐个正规卸载：npm uninstall -g <包名>，比删目录干净。",
+                  "缓存占空间请走「npm 全局缓存」那张绿灯卡，不要动这里。"],
+        "hide": [("appdata_roaming", "npm")],
+    },
+    {
+        "key": "dev_tool_data",
+        "match": ["%USERPROFILE%/.codex", "%USERPROFILE%/.workbuddy",
+                  "%USERPROFILE%/.claude", "%USERPROFILE%/.cursor",
+                  "%USERPROFILE%/.trae-cn"],
+        "title": "开发工具数据目录",
+        "type": "应用数据",
+        "split": True,
+        "desc": "命令行与编辑器工具的配置、插件、会话历史、运行日志与二进制运行时混在一起。"
+                "其中 logs / traces / .tmp / binaries 属于可再生的部分，sessions / settings 是真实数据。",
+        "risk": "删掉 sessions、projects、connectors 配置会丢失会话历史与登录状态。",
+        "steps": ["先下钻看构成（脚本 probe.py 直接指向该目录），分清 logs / traces / .tmp 与 sessions / settings。",
+                  "只删日志与临时产物：logs、traces、.tmp、crash 报告这类目录可以直接清。",
+                  "binaries / plugins 删掉后工具会重新下载或需要重装，不建议手删。"],
+        "hide": [("user_profile", ".codex"), ("user_profile", ".workbuddy"),
+                 ("user_profile", ".claude"), ("user_profile", ".cursor"),
+                 ("user_profile", ".trae-cn")],
+    },
+    {
+        "key": "sdk_images",
+        "match": ["%LOCALAPPDATA%/Android/Sdk/system-images",
+                  "%LOCALAPPDATA%/Android/Sdk/emulator"],
+        "title": "Android SDK 系统镜像",
+        "type": "开发资产",
+        "desc": "模拟器用的系统镜像与 emulator 组件，每个 API 版本往往 GB 级。",
+        "risk": "删掉后对应 API 版本的模拟器无法启动，需要重新下载镜像。",
+        "steps": ["Android Studio → SDK Manager → SDK Platforms，取消勾选不再用的 API 版本镜像。",
+                  "只想留一个版本：把不用的 system-images 子目录整体移入回收站。",
+                  "工程只需要编译不需模拟器的话，保留 platform-tools + platforms 即可。"],
+        "hide": [("appdata_local", "Android")],
+    },
+]
+
+RED_WIN = [
+    {
+        "key": "windows_installer",
+        "match": ["C:/Windows/Installer"],
+        "title": "Windows\\Installer 补丁缓存",
+        "type": "系统资产",
+        "desc": "Office、Adobe、NVIDIA 等大型软件的 MSI/MSP 安装与补丁包缓存。"
+                "Windows 靠这些文件做「修复 / 卸载 / 更新回滚」。",
+        "risk": "手删会导致对应软件无法修复、无法卸载、更新失败，且没有回收站可退——典型的「看着能删、删了就哭」。",
+        "indirect_release": ["用 PatchCleaner / WICleaner 这类工具，只删「已无对应程序的孤儿补丁」，可安全回收部分空间。",
+                             "先把不再用的大软件（Office / Adobe 系）正常卸载，其补丁缓存才会被判为孤儿。",
+                             "系统盘紧张时优先考虑迁移页面文件、清回收站，而不是动这个目录。"],
+        "openable": False,
+        "hide": [("c_root", "Windows")],
+    },
+]
+
+LONG_TERM_WIN = [
+    "每月例行：uv cache prune、npm cache clean --force、pip cache purge，三项常年能省 10 GB 以上。",
+    "浏览器缓存交给浏览器自己管：开启「关闭后清理缓存」，或定期 Ctrl+Shift+Del。",
+    "开启 Windows「存储感知」（设置 → 系统 → 存储），自动清临时文件与长期未用的回收站内容。",
+    "组件存储瘦身（管理员）：DISM /Online /Cleanup-Image /StartComponentCleanup，可压缩 WinSxS 体积。",
+    "不常用休眠就执行 powercfg /h off，直接回收与内存等大的 hiberfil.sys（会关闭快速启动与休眠）。",
+    "虚拟内存 pagefile.sys 迁到其他盘或设为固定大小，避免它在系统盘上随内存增长。",
+    "可视化复查用 WizTree / TreeSize Free（Windows 上的 DaisyDisk），一眼看出谁在长胖。",
+    "把模拟器镜像、视频素材、下载文件、项目虚拟环境统一放到数据盘，系统盘只留系统与常用程序。",
+]
+
+GREEN_MAC = [
+    {"key": "derived", "title": "Xcode DerivedData",
+     "patterns": ["~/Library/Developer/Xcode/DerivedData"], "type": "开发缓存", "min_gb": 0.5,
+     "desc": "Xcode 的构建中间产物，删掉后下次编译会重建。", "close": "关闭 Xcode",
+     "risk": "首次重新编译会变慢。",
+     "cmd": ("删除命令", "rm -rf ~/Library/Developer/Xcode/DerivedData/*")},
+    {"key": "ios_device", "title": "iOS DeviceSupport",
+     "patterns": ["~/Library/Developer/Xcode/iOS DeviceSupport",
+                  "~/Library/Developer/Xcode/watchOS DeviceSupport"],
+     "type": "开发缓存", "min_gb": 1.0,
+     "desc": "为每个 iOS 版本生成的调试符号，旧版本可以删。", "close": "关闭 Xcode",
+     "risk": "连接对应版本设备调试时会重新生成。"},
+    {"key": "simulators", "title": "CoreSimulator 设备镜像",
+     "patterns": ["~/Library/Developer/CoreSimulator/Devices"], "type": "虚拟机镜像", "min_gb": 2.0,
+     "desc": "iOS 模拟器设备数据。", "close": "关闭模拟器",
+     "risk": "删了要重新创建模拟器。",
+     "cmd": ("官方清理命令", "xcrun simctl delete unavailable")},
+    {"key": "npm_mac", "title": "npm 缓存", "patterns": ["~/.npm/_cacache"],
+     "type": "开发缓存", "min_gb": 0.3, "desc": "npm 包归档。", "close": "无需关闭程序",
+     "risk": "下次安装依赖需重新下载。",
+     "cmd": ("官方清理命令", "npm cache clean --force")},
+    {"key": "brew", "title": "Homebrew 下载缓存", "patterns": ["~/Library/Caches/Homebrew"],
+     "type": "开发缓存", "min_gb": 0.3, "desc": "brew 下载的安装包与 bottle。", "close": "无需关闭程序",
+     "risk": "重装同版本需要重新下载。",
+     "cmd": ("官方清理命令", "brew cleanup -s --prune=all")},
+    {"key": "app_caches", "title": "应用缓存（~/Library/Caches）",
+     "patterns": ["~/Library/Caches/*"], "type": "应用缓存", "min_gb": 1.0,
+     "desc": "各应用的缓存目录，可再生的部分。", "close": "尽量关闭对应应用",
+     "risk": "个别应用删缓存后会重新登录或重建索引。"},
+]
+
+YELLOW_MAC = [
+    {"key": "trash", "match": ["~/.Trash"], "title": "废纸篓", "type": "回收站",
+     "desc": "废纸篓里的已删除文件。", "risk": "清空后不可恢复。",
+     "steps": ["先打开废纸篓确认没有要恢复的内容（右键 → 放回原处）。", "再执行「清倒废纸篓」。"],
+     "openable": False},
+    {"key": "containers", "match": ["~/Library/Containers/*"], "title": "应用沙盒容器",
+     "type": "应用数据", "desc": "UUID 命名的容器目录，属于某个 App 的数据或离线内容，"
+                                 "需要按体积逐个追查属于哪个应用。",
+     "risk": "删除等于清空该应用的全部本地数据。",
+     "steps": ["用 probe.py 下钻看内部文件名，判断属于哪个 App、装的是什么。",
+               "能对应到具体应用时，优先在应用内清理。",
+               "确定无用再整体移入废纸篓。"]},
+]

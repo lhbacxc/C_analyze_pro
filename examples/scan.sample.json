@@ -1,0 +1,1119 @@
+{
+ "system": {
+  "os": "windows",
+  "platform": "win32",
+  "hostname": "DESKTOP-linhai",
+  "user": "lhbac",
+  "home": "C:\\Users\\lhbac",
+  "disk_name": "C:",
+  "disks": [
+   {
+    "mount": "C:\\",
+    "name": "C:\\",
+    "total": 322138271744,
+    "free": 87506010112,
+    "used": 234632261632
+   },
+   {
+    "mount": "D:\\",
+    "name": "新加卷",
+    "total": 701003460608,
+    "free": 337469710336,
+    "used": 363533750272
+   },
+   {
+    "mount": "E:\\",
+    "name": "Backup",
+    "total": 2000396832768,
+    "free": 1271964487680,
+    "used": 728432345088
+   },
+   {
+    "mount": "F:\\",
+    "name": "林海",
+    "total": 61989711872,
+    "free": 35056500736,
+    "used": 26933211136
+   }
+  ],
+  "main_disk": {
+   "mount": "C:\\",
+   "name": "C:\\",
+   "total": 322138271744,
+   "free": 87506010112,
+   "used": 234632261632
+  },
+  "min_size_bytes": 52428800
+ },
+ "groups": {
+  "user_profile": [
+   {
+    "name": "AppData",
+    "path": "C:\\Users\\lhbac\\AppData",
+    "size": 78098448760,
+    "denied": 4,
+    "kind": "dir"
+   },
+   {
+    "name": ".android",
+    "path": "C:\\Users\\lhbac\\.android",
+    "size": 11953581942,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": ".trae-cn",
+    "path": "C:\\Users\\lhbac\\.trae-cn",
+    "size": 2054574369,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": ".codex",
+    "path": "C:\\Users\\lhbac\\.codex",
+    "size": 1958703311,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": ".cache",
+    "path": "C:\\Users\\lhbac\\.cache",
+    "size": 1928047957,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": ".workbuddy",
+    "path": "C:\\Users\\lhbac\\.workbuddy",
+    "size": 1457314617,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": ".ccgui",
+    "path": "C:\\Users\\lhbac\\.ccgui",
+    "size": 714663815,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": ".codemoss",
+    "path": "C:\\Users\\lhbac\\.codemoss",
+    "size": 714455938,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": ".cherrystudio",
+    "path": "C:\\Users\\lhbac\\.cherrystudio",
+    "size": 315812474,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": ".codex-session-delete",
+    "path": "C:\\Users\\lhbac\\.codex-session-delete",
+    "size": 294091220,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": ".cc-switch",
+    "path": "C:\\Users\\lhbac\\.cc-switch",
+    "size": 109173566,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": ".local",
+    "path": "C:\\Users\\lhbac\\.local",
+    "size": 59756076,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": ".skiko",
+    "path": "C:\\Users\\lhbac\\.skiko",
+    "size": 54914224,
+    "denied": 0,
+    "kind": "dir"
+   }
+  ],
+  "appdata_local": [
+   {
+    "name": "uv",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\uv",
+    "size": 14167156704,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Microsoft",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Microsoft",
+    "size": 12096712408,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Google",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Google",
+    "size": 8756541186,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "npm-cache",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\npm-cache",
+    "size": 3988092437,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "JianyingPro",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\JianyingPro",
+    "size": 2534403078,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "NVIDIA",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\NVIDIA",
+    "size": 2190482310,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "OpenAI",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\OpenAI",
+    "size": 1881589302,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "ima.copilot",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\ima.copilot",
+    "size": 1629809132,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Temp",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Temp",
+    "size": 1375021788,
+    "denied": 3,
+    "kind": "dir"
+   },
+   {
+    "name": "mineru-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\mineru-updater",
+    "size": 893516760,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Pub",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Pub",
+    "size": 890978156,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Packages",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Packages",
+    "size": 847998127,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "TechSmith",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\TechSmith",
+    "size": 640316979,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "cherrystudio-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\cherrystudio-updater",
+    "size": 614871080,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "@guanjia-openclawelectron-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\@guanjia-openclawelectron-updater",
+    "size": 608550368,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "perfectworldarena-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\perfectworldarena-updater",
+    "size": 562097883,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Claude-3p",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Claude-3p",
+    "size": 535499332,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Steam",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Steam",
+    "size": 528338927,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "folia-major-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\folia-major-updater",
+    "size": 498493152,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "pip",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\pip",
+    "size": 464492721,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "@genieworkbuddy-desktop-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\@genieworkbuddy-desktop-updater",
+    "size": 450174440,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "JxBrowser",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\JxBrowser",
+    "size": 447550153,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "EpicGamesLauncher",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\EpicGamesLauncher",
+    "size": 416795914,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "obsidian-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\obsidian-updater",
+    "size": 341331008,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Autodesk",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Autodesk",
+    "size": 215537872,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": ".dartServer",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\.dartServer",
+    "size": 180808250,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Programs",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Programs",
+    "size": 179448725,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "siyuan-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\siyuan-updater",
+    "size": 171201320,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "NVIDIA Corporation",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\NVIDIA Corporation",
+    "size": 156786114,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "cloud-code",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\cloud-code",
+    "size": 151372988,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "adrive-desktop-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\adrive-desktop-updater",
+    "size": 150631122,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "easy-fish-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\easy-fish-updater",
+    "size": 132707341,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Epic Games",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Epic Games",
+    "size": 131720792,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "motrix-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\motrix-updater",
+    "size": 127763099,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "tdappdesktop",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\tdappdesktop",
+    "size": 120345202,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "mineradio-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\mineradio-updater",
+    "size": 116842919,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "algermusicplayer-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\algermusicplayer-updater",
+    "size": 106283798,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "komodo-electron-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\komodo-electron-updater",
+    "size": 105338104,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "GameViewer",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\GameViewer",
+    "size": 102182994,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "electron",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\electron",
+    "size": 101873394,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "com.sgtx.dpaste",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\com.sgtx.dpaste",
+    "size": 98591160,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "notion-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\notion-updater",
+    "size": 97380656,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "com.workreview.app",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\com.workreview.app",
+    "size": 97206109,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "com.ccswitch.desktop",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\com.ccswitch.desktop",
+    "size": 95709297,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "com.pofl.fanqienoveldownloader",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\com.pofl.fanqienoveldownloader",
+    "size": 95115483,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "ms-playwright-go",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\ms-playwright-go",
+    "size": 94072081,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "BypassRuntm",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\BypassRuntm",
+    "size": 91350049,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "app.mangodisk.desktop",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\app.mangodisk.desktop",
+    "size": 91108105,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "com.zhukunpenglinyutong.ccgui",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\com.zhukunpenglinyutong.ccgui",
+    "size": 90265555,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "io.github.clash-verge-rev.clash-verge-rev",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\io.github.clash-verge-rev.clash-verge-rev",
+    "size": 87842273,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "bluestacks-services-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\bluestacks-services-updater",
+    "size": 84564824,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Photoshop1-25-WIN",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Photoshop1-25-WIN",
+    "size": 81547036,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "ode-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\ode-updater",
+    "size": 76360619,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "tunefreenext-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\tunefreenext-updater",
+    "size": 69516017,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Zotero",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Zotero",
+    "size": 66581355,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "ToDesk",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\ToDesk",
+    "size": 65117467,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "node-gyp",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\node-gyp",
+    "size": 61938506,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Illustrator1-30-WIN",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Illustrator1-30-WIN",
+    "size": 59914418,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "yesplaymusic-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\yesplaymusic-updater",
+    "size": 58241662,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": ".bee",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\.bee",
+    "size": 58147394,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "tuya-updater",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\tuya-updater",
+    "size": 53415824,
+    "denied": 0,
+    "kind": "dir"
+   }
+  ],
+  "appdata_roaming": [
+   {
+    "name": "Tencent",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\Tencent",
+    "size": 3454214108,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Trae CN",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\Trae CN",
+    "size": 3209784990,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "npm",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\npm",
+    "size": 2081939290,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "QQEX",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\QQEX",
+    "size": 1328557189,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "work-review",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\work-review",
+    "size": 1307295730,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "com.sgtx.dpaste",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\com.sgtx.dpaste",
+    "size": 577200208,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "SodaMusic",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\SodaMusic",
+    "size": 495485173,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Google",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\Google",
+    "size": 488614114,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "QQ",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\QQ",
+    "size": 385494881,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Folia",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\Folia",
+    "size": 356793281,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Adobe",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\Adobe",
+    "size": 266289697,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Codex",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\Codex",
+    "size": 247863193,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "io.github.clash-verge-rev.clash-verge-rev",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\io.github.clash-verge-rev.clash-verge-rev",
+    "size": 213599210,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "aDrive",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\aDrive",
+    "size": 186061275,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "com.adobe.dunamis",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\com.adobe.dunamis",
+    "size": 179832197,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Nutstore",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\Nutstore",
+    "size": 139905214,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "网盘解析工具.exe",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\网盘解析工具.exe",
+    "size": 77286298,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "MinerU",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\MinerU",
+    "size": 76090003,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "obsidian",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\obsidian",
+    "size": 74831941,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "NutstoreClient",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\NutstoreClient",
+    "size": 70218604,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Microsoft",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\Microsoft",
+    "size": 67528262,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "uv",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\uv",
+    "size": 61493484,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "calibre",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\calibre",
+    "size": 60773095,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "CherryStudio",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\CherryStudio",
+    "size": 54395448,
+    "denied": 0,
+    "kind": "dir"
+   }
+  ],
+  "temp": [
+   {
+    "name": "Temp",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Temp",
+    "size": 1375021788,
+    "denied": 3,
+    "kind": "dir"
+   }
+  ],
+  "downloads": [],
+  "program_files": [
+   {
+    "name": "Common Files",
+    "path": "C:\\Program Files\\Common Files",
+    "size": 4174022877,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Microsoft Office",
+    "path": "C:\\Program Files\\Microsoft Office",
+    "size": 3453288802,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "NVIDIA Corporation",
+    "path": "C:\\Program Files\\NVIDIA Corporation",
+    "size": 1164581276,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Autodesk",
+    "path": "C:\\Program Files\\Autodesk",
+    "size": 782624033,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Microsoft OneDrive",
+    "path": "C:\\Program Files\\Microsoft OneDrive",
+    "size": 749525709,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Google",
+    "path": "C:\\Program Files\\Google",
+    "size": 538643304,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Thermo Scientific",
+    "path": "C:\\Program Files\\Thermo Scientific",
+    "size": 341777717,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Nutstore",
+    "path": "C:\\Program Files\\Nutstore",
+    "size": 300793871,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "PowerShell",
+    "path": "C:\\Program Files\\PowerShell",
+    "size": 297195541,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "OEM",
+    "path": "C:\\Program Files\\OEM",
+    "size": 276869416,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Windows Defender Advanced Threat Protection",
+    "path": "C:\\Program Files\\Windows Defender Advanced Threat Protection",
+    "size": 242083297,
+    "denied": 1,
+    "kind": "dir"
+   },
+   {
+    "name": "Zotero",
+    "path": "C:\\Program Files\\Zotero",
+    "size": 238419913,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "dotnet",
+    "path": "C:\\Program Files\\dotnet",
+    "size": 167874694,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Adobe",
+    "path": "C:\\Program Files\\Adobe",
+    "size": 126300245,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "HPPrintScanDoctor",
+    "path": "C:\\Program Files\\HPPrintScanDoctor",
+    "size": 118388811,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "AntiCheatExpert",
+    "path": "C:\\Program Files\\AntiCheatExpert",
+    "size": 87627274,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Intel",
+    "path": "C:\\Program Files\\Intel",
+    "size": 81564470,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Quicker",
+    "path": "C:\\Program Files\\Quicker",
+    "size": 61740902,
+    "denied": 0,
+    "kind": "dir"
+   }
+  ],
+  "program_files_x86": [
+   {
+    "name": "Microsoft",
+    "path": "C:\\Program Files (x86)\\Microsoft",
+    "size": 4543998847,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Common Files",
+    "path": "C:\\Program Files (x86)\\Common Files",
+    "size": 1079414751,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Epic Games",
+    "path": "C:\\Program Files (x86)\\Epic Games",
+    "size": 767026950,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "NVIDIA Corporation",
+    "path": "C:\\Program Files (x86)\\NVIDIA Corporation",
+    "size": 642703043,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Google",
+    "path": "C:\\Program Files (x86)\\Google",
+    "size": 572257753,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "VMware",
+    "path": "C:\\Program Files (x86)\\VMware",
+    "size": 107016431,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "InstallShield Installation Information",
+    "path": "C:\\Program Files (x86)\\InstallShield Installation Information",
+    "size": 59041363,
+    "denied": 0,
+    "kind": "dir"
+   }
+  ],
+  "programdata": [
+   {
+    "name": "NVIDIA Corporation",
+    "path": "C:\\ProgramData\\NVIDIA Corporation",
+    "size": 5350461811,
+    "denied": 2,
+    "kind": "dir"
+   },
+   {
+    "name": "Adobe",
+    "path": "C:\\ProgramData\\Adobe",
+    "size": 1758867926,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "NVIDIA",
+    "path": "C:\\ProgramData\\NVIDIA",
+    "size": 1329039461,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "oneClick",
+    "path": "C:\\ProgramData\\oneClick",
+    "size": 1074561201,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Microsoft",
+    "path": "C:\\ProgramData\\Microsoft",
+    "size": 922912901,
+    "denied": 342,
+    "kind": "dir"
+   },
+   {
+    "name": "Package Cache",
+    "path": "C:\\ProgramData\\Package Cache",
+    "size": 639623014,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "OriginLab",
+    "path": "C:\\ProgramData\\OriginLab",
+    "size": 322700396,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Epic",
+    "path": "C:\\ProgramData\\Epic",
+    "size": 221817070,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Huorong",
+    "path": "C:\\ProgramData\\Huorong",
+    "size": 170487018,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "USOShared",
+    "path": "C:\\ProgramData\\USOShared",
+    "size": 140636160,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "TechSmith",
+    "path": "C:\\ProgramData\\TechSmith",
+    "size": 68118740,
+    "denied": 0,
+    "kind": "dir"
+   }
+  ],
+  "c_root": [
+   {
+    "name": "Users",
+    "path": "C:\\Users",
+    "size": 99949729892,
+    "denied": 6,
+    "kind": "dir"
+   },
+   {
+    "name": "Windows",
+    "path": "C:\\Windows",
+    "size": 30815115361,
+    "denied": 47,
+    "kind": "dir"
+   },
+   {
+    "name": "pagefile.sys",
+    "path": "C:\\pagefile.sys",
+    "size": 26843545600,
+    "denied": 0,
+    "kind": "file"
+   },
+   {
+    "name": "hiberfil.sys",
+    "path": "C:\\hiberfil.sys",
+    "size": 13630033920,
+    "denied": 0,
+    "kind": "file"
+   },
+   {
+    "name": "Program Files",
+    "path": "C:\\Program Files",
+    "size": 13346569266,
+    "denied": 3,
+    "kind": "dir"
+   },
+   {
+    "name": "ProgramData",
+    "path": "C:\\ProgramData",
+    "size": 12181006163,
+    "denied": 354,
+    "kind": "dir"
+   },
+   {
+    "name": "Program Files (x86)",
+    "path": "C:\\Program Files (x86)",
+    "size": 7947593394,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "$Recycle.Bin",
+    "path": "C:\\$Recycle.Bin",
+    "size": 4766641151,
+    "denied": 14,
+    "kind": "dir"
+   },
+   {
+    "name": "Recovery",
+    "path": "C:\\Recovery",
+    "size": 3538353729,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "AvantageSystem",
+    "path": "C:\\AvantageSystem",
+    "size": 125044696,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "$SysReset",
+    "path": "C:\\$SysReset",
+    "size": 56873515,
+    "denied": 0,
+    "kind": "dir"
+   }
+  ],
+  "dev_caches": [
+   {
+    "name": "uv",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\uv",
+    "size": 14167156704,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "npm-cache",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\npm-cache",
+    "size": 3988092437,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": ".cache",
+    "path": "C:\\Users\\lhbac\\.cache",
+    "size": 1928047957,
+    "denied": 0,
+    "kind": "dir"
+   },
+   {
+    "name": "Cache",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\pip\\Cache",
+    "size": 464492721,
+    "denied": 0,
+    "kind": "dir"
+   }
+  ]
+ }
+}

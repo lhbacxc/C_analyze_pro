@@ -1,0 +1,656 @@
+{
+ "generated_at": "2026-11-03 16:32",
+ "system": {
+  "disk_name": "C:",
+  "hostname": "DESKTOP-linhai",
+  "user": "lhbac"
+ },
+ "disk": {
+  "total": 322138271744,
+  "used": 234632261632,
+  "free": 87506010112
+ },
+ "summary": {
+  "overview": "C: 已用 约 218.5 GB / 约 300.0 GB（73%），最大占用是 AppData（应用数据与缓存）（约 72.7 GB）。绿灯 10 项共 约 32.0 GB 可以立刻清掉、不碰任何个人文件；连黄灯一起处理最多 约 79.2 GB。",
+  "priority": [
+   "先清 <b>uv 包缓存 约 13.2 GB</b>：纯缓存，删掉会自动重建，不影响功能与个人数据。",
+   "先清 <b>Chrome 缓存与端侧模型 约 5.0 GB</b>：纯缓存，删掉会自动重建，不影响功能与个人数据。",
+   "先清 <b>npm 全局缓存 约 3.7 GB</b>：纯缓存，删掉会自动重建，不影响功能与个人数据。",
+   "<b>Android 模拟器虚拟设备（AVD） 约 11.1 GB</b>：模拟器设备目录，主体是 userdata 镜像与 snapshots 快照。",
+   "<b>NVIDIA Corporation 约 5.0 GB</b>：体积不小但用途不明，需要先确认内容。",
+   "系统文件也能回收：不常用休眠执行 <b>powercfg /h off</b> 可省下与内存等大的 hiberfil.sys；虚拟内存可在系统属性里迁到数据盘。",
+   "长期方案：把模拟器镜像、素材、下载文件与项目环境迁到数据盘，系统盘只留系统与常用程序。"
+  ],
+  "tier_stats": {
+   "green": "约 32.0 GB",
+   "yellow": "约 47.2 GB",
+   "red": "约 3.8 GB"
+  },
+  "long_term": [
+   "每月例行：uv cache prune、npm cache clean --force、pip cache purge，三项常年能省 10 GB 以上。",
+   "浏览器缓存交给浏览器自己管：开启「关闭后清理缓存」，或定期 Ctrl+Shift+Del。",
+   "开启 Windows「存储感知」（设置 → 系统 → 存储），自动清临时文件与长期未用的回收站内容。",
+   "组件存储瘦身（管理员）：DISM /Online /Cleanup-Image /StartComponentCleanup，可压缩 WinSxS 体积。",
+   "不常用休眠就执行 powercfg /h off，直接回收与内存等大的 hiberfil.sys（会关闭快速启动与休眠）。",
+   "虚拟内存 pagefile.sys 迁到其他盘或设为固定大小，避免它在系统盘上随内存增长。",
+   "可视化复查用 WizTree / TreeSize Free（Windows 上的 DaisyDisk），一眼看出谁在长胖。",
+   "把模拟器镜像、视频素材、下载文件、项目虚拟环境统一放到数据盘，系统盘只留系统与常用程序。"
+  ]
+ },
+ "top5": [
+  {
+   "name": "AppData（应用数据与缓存）",
+   "size": "约 72.7 GB",
+   "type": "应用数据",
+   "path": "C:\\Users\\lhbac\\AppData",
+   "note": "含 uv 约 13.2 GB、Microsoft 约 11.3 GB、Google 约 8.2 GB"
+  },
+  {
+   "name": "Windows 系统目录",
+   "size": "约 28.7 GB",
+   "type": "系统资产",
+   "path": "C:\\Windows",
+   "note": ""
+  },
+  {
+   "name": "pagefile.sys（虚拟内存）",
+   "size": "约 25.0 GB",
+   "type": "系统文件",
+   "path": "C:\\pagefile.sys",
+   "note": ""
+  },
+  {
+   "name": "hiberfil.sys（休眠文件）",
+   "size": "约 12.7 GB",
+   "type": "系统文件",
+   "path": "C:\\hiberfil.sys",
+   "note": ""
+  },
+  {
+   "name": "已安装程序",
+   "size": "约 12.4 GB",
+   "type": "应用本体",
+   "path": "C:\\Program Files",
+   "note": ""
+  },
+  {
+   "name": "程序共享数据",
+   "size": "约 11.3 GB",
+   "type": "应用数据",
+   "path": "C:\\ProgramData",
+   "note": ""
+  }
+ ],
+ "tiers": {
+  "green": [
+   {
+    "title": "uv 包缓存",
+    "size": "约 13.2 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\uv\\cache",
+    "type": "开发缓存",
+    "desc": "uv 装包时下载的 wheel / sdist 归档，全部在 archive-v0 子目录里。这是纯缓存层，清理不会碰到已装好的 Python 环境。",
+    "close": "无需关闭任何程序",
+    "risk": "清完后下次安装依赖需要联网重新下载，现有虚拟环境与已装包不受影响。",
+    "commands": [
+     {
+      "label": "官方清理命令（推荐）",
+      "cmd": "uv cache clean"
+     }
+    ],
+    "trash_paths": [
+     "C:\\Users\\lhbac\\AppData\\Local\\uv\\cache"
+    ],
+    "openable": true
+   },
+   {
+    "title": "npm 全局缓存",
+    "size": "约 3.7 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\npm-cache\\_cacache",
+    "type": "开发缓存",
+    "desc": "npm 安装过的包归档（_cacache），纯缓存，重装依赖时可从网络重新拉取。",
+    "close": "无需关闭任何程序",
+    "risk": "下次 npm install 会重新下载依赖，离线安装会失效。",
+    "commands": [
+     {
+      "label": "官方清理命令（推荐）",
+      "cmd": "npm cache clean --force"
+     }
+    ],
+    "trash_paths": [
+     "C:\\Users\\lhbac\\AppData\\Local\\npm-cache\\_cacache"
+    ],
+    "openable": true
+   },
+   {
+    "title": "pip 缓存",
+    "size": "约 0.4 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\pip\\Cache",
+    "type": "开发缓存",
+    "desc": "pip 下载过的 wheel 归档，与 uv 缓存互不相干。",
+    "close": "无需关闭任何程序",
+    "risk": "下次 pip install 需重新下载，已装包不受影响。",
+    "commands": [
+     {
+      "label": "官方清理命令（推荐）",
+      "cmd": "pip cache purge"
+     }
+    ],
+    "trash_paths": [
+     "C:\\Users\\lhbac\\AppData\\Local\\pip\\Cache"
+    ],
+    "openable": true
+   },
+   {
+    "title": "Chrome 缓存与端侧模型",
+    "size": "约 5.0 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Default 等 11 个位置",
+    "type": "应用缓存",
+    "desc": "网页缓存、代码缓存、Service Worker 与组件缓存。其中 OptGuideOnDeviceModel 是 Chrome 内置的端侧 AI 模型文件（通常是最肥的一项），删掉后 Chrome 会按需自动重新下载。",
+    "close": "Chrome 全部窗口",
+    "risk": "不会丢失书签、密码、历史记录与登录状态；首次打开常访问的网站会略慢。",
+    "commands": [
+     {
+      "label": "PowerShell（复制后粘贴到终端）",
+      "cmd": "Remove-Item -Recurse -Force -ErrorAction SilentlyContinue \"C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cache\", \"C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 3\\Cache\", \"C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Code Cache\", \"C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 3\\Code Cache\", \"C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\System Profile\\Code Cache\", \"C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Service Worker\", \"C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 3\\Service Worker\", \"C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\GPUCache\", \"C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 3\\GPUCache\", \"C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\component_crx_cache\", \"C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\OptGuideOnDeviceModel\""
+     }
+    ],
+    "trash_paths": [
+     "C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 3\\Cache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Code Cache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 3\\Code Cache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\System Profile\\Code Cache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Service Worker",
+     "C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 3\\Service Worker",
+     "C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\GPUCache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 3\\GPUCache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\component_crx_cache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Google\\Chrome\\User Data\\OptGuideOnDeviceModel"
+    ],
+    "openable": true
+   },
+   {
+    "title": "Edge 缓存",
+    "size": "约 3.1 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default 等 14 个位置",
+    "type": "应用缓存",
+    "desc": "各浏览器配置下的网页缓存、代码缓存与 Service Worker，以及扩展与组件的 CRX 下载缓存。",
+    "close": "Edge 全部窗口",
+    "risk": "书签、密码、收藏夹与扩展本体不受影响，但删掉 CRX 缓存后不保证扩展能离线重装。",
+    "commands": [
+     {
+      "label": "PowerShell（复制后粘贴到终端）",
+      "cmd": "Remove-Item -Recurse -Force -ErrorAction SilentlyContinue \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Cache\", \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 6\\Cache\", \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 7\\Cache\", \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Code Cache\", \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 6\\Code Cache\", \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 7\\Code Cache\", \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Service Worker\", \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 6\\Service Worker\", \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 7\\Service Worker\", \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\GPUCache\", \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 6\\GPUCache\", \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 7\\GPUCache\", \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\component_crx_cache\", \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\extensions_crx_cache\""
+     }
+    ],
+    "trash_paths": [
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Cache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 6\\Cache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 7\\Cache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Code Cache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 6\\Code Cache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 7\\Code Cache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Service Worker",
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 6\\Service Worker",
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 7\\Service Worker",
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\GPUCache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 6\\GPUCache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Profile 7\\GPUCache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\component_crx_cache",
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\extensions_crx_cache"
+    ],
+    "openable": true
+   },
+   {
+    "title": "编辑器缓存（Trae / Cursor / VS Code）",
+    "size": "约 1.0 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\Trae CN 等 3 个位置",
+    "type": "开发缓存",
+    "desc": "Electron 编辑器的运行时编译缓存（CachedData）与扩展安装包副本（CachedExtensionVSIXs）。VSIX 是装完就没用的安装包残留。",
+    "close": "对应编辑器全部窗口",
+    "risk": "不影响已安装扩展与工作区设置，重开编辑器后自动重建缓存。",
+    "commands": [
+     {
+      "label": "PowerShell（复制后粘贴到终端）",
+      "cmd": "Remove-Item -Recurse -Force -ErrorAction SilentlyContinue \"C:\\Users\\lhbac\\AppData\\Roaming\\Trae CN\\CachedData\", \"C:\\Users\\lhbac\\AppData\\Roaming\\Trae CN\\CachedExtensionVSIXs\", \"C:\\Users\\lhbac\\AppData\\Roaming\\Trae CN\\Cache\""
+     }
+    ],
+    "trash_paths": [
+     "C:\\Users\\lhbac\\AppData\\Roaming\\Trae CN\\CachedData",
+     "C:\\Users\\lhbac\\AppData\\Roaming\\Trae CN\\CachedExtensionVSIXs",
+     "C:\\Users\\lhbac\\AppData\\Roaming\\Trae CN\\Cache"
+    ],
+    "openable": true
+   },
+   {
+    "title": "下载型运行时 / 模型缓存（.cache）",
+    "size": "约 1.8 GB",
+    "path": "C:\\Users\\lhbac\\.cache 等 8 个位置",
+    "type": "开发缓存",
+    "desc": "命令行工具下载的运行时、翻译/推理模型等可再生产物（如 codex-runtimes、babeldoc、huggingface）。",
+    "close": "无需关闭任何程序",
+    "risk": "删掉后首次运行对应工具会重新下载（需要联网）。",
+    "commands": [
+     {
+      "label": "PowerShell（复制后粘贴到终端）",
+      "cmd": "Remove-Item -Recurse -Force -ErrorAction SilentlyContinue \"C:\\Users\\lhbac\\.cache\\babeldoc\", \"C:\\Users\\lhbac\\.cache\\codex-runtimes\", \"C:\\Users\\lhbac\\.cache\\huggingface\", \"C:\\Users\\lhbac\\.cache\\paddle\", \"C:\\Users\\lhbac\\.cache\\pdf2zh\", \"C:\\Users\\lhbac\\.cache\\pdf2zh_next\", \"C:\\Users\\lhbac\\.cache\\vscode-ripgrep\", \"C:\\Users\\lhbac\\.cache\\yt-dlp\""
+     }
+    ],
+    "trash_paths": [
+     "C:\\Users\\lhbac\\.cache\\babeldoc",
+     "C:\\Users\\lhbac\\.cache\\codex-runtimes",
+     "C:\\Users\\lhbac\\.cache\\huggingface",
+     "C:\\Users\\lhbac\\.cache\\paddle",
+     "C:\\Users\\lhbac\\.cache\\pdf2zh",
+     "C:\\Users\\lhbac\\.cache\\pdf2zh_next",
+     "C:\\Users\\lhbac\\.cache\\vscode-ripgrep",
+     "C:\\Users\\lhbac\\.cache\\yt-dlp"
+    ],
+    "openable": true
+   },
+   {
+    "title": "NVIDIA 着色器缓存（DXCache / GLCache）",
+    "size": "约 2.0 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\NVIDIA 等 2 个位置",
+    "type": "应用缓存",
+    "desc": "显卡驱动为游戏与应用预编译的着色器缓存，通常集中在 DXCache。",
+    "close": "关闭游戏与三维应用",
+    "risk": "删掉后首次启动游戏会重新编译着色器，可能卡顿一小段时间。",
+    "commands": [
+     {
+      "label": "PowerShell（复制后粘贴到终端）",
+      "cmd": "Remove-Item -Recurse -Force -ErrorAction SilentlyContinue \"C:\\Users\\lhbac\\AppData\\Local\\NVIDIA\\DXCache\", \"C:\\Users\\lhbac\\AppData\\Local\\NVIDIA\\GLCache\""
+     }
+    ],
+    "trash_paths": [
+     "C:\\Users\\lhbac\\AppData\\Local\\NVIDIA\\DXCache",
+     "C:\\Users\\lhbac\\AppData\\Local\\NVIDIA\\GLCache"
+    ],
+    "openable": true
+   },
+   {
+    "title": "Office 文件缓存",
+    "size": "约 0.4 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Office\\16.0\\OfficeFileCache",
+    "type": "应用缓存",
+    "desc": "Word / Excel / PowerPoint 的临时文档缓存，用于崩溃恢复，文档本体不在其中。",
+    "close": "Word / Excel / PowerPoint 全部关闭",
+    "risk": "不影响已保存文档；未保存就崩溃的恢复机会会丢失，请先保存。",
+    "commands": [
+     {
+      "label": "PowerShell（复制后粘贴到终端）",
+      "cmd": "Remove-Item -Recurse -Force -ErrorAction SilentlyContinue \"C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Office\\16.0\\OfficeFileCache\""
+     }
+    ],
+    "trash_paths": [
+     "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Office\\16.0\\OfficeFileCache"
+    ],
+    "openable": true
+   },
+   {
+    "title": "用户临时文件",
+    "size": "约 1.3 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Temp",
+    "type": "临时文件",
+    "desc": "当前用户临时目录，程序装完、解压完就该消失的中间产物。",
+    "close": "尽量关闭正在安装 / 运行的软件",
+    "risk": "被占用的文件会自动跳过；有程序正在使用临时文件时可能出现异常。",
+    "commands": [
+     {
+      "label": "PowerShell（复制后粘贴到终端）",
+      "cmd": "Get-ChildItem \"$env:TEMP\" -Force | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue"
+     }
+    ],
+    "trash_paths": [
+     "C:\\Users\\lhbac\\AppData\\Local\\Temp"
+    ],
+    "openable": true
+   }
+  ],
+  "yellow": [
+   {
+    "title": "回收站",
+    "size": "约 4.4 GB",
+    "path": "C:\\$Recycle.Bin",
+    "type": "回收站",
+    "desc": "回收站里压着已删除的文件（C 盘所有用户共用，这里统计的是本机最大的 SID 目录）。这是单项可回收空间里最靠前的一块，但能否清空完全取决于里面还有没有要找回的东西。",
+    "risk": "清空后文件不可恢复。",
+    "steps": [
+     "双击桌面「回收站」图标，按「原位置」排序，先确认有没有要还原的文件（右键 → 还原）。",
+     "确认没有要留的，右键「清空回收站」，或执行下面的命令一次性清空 C 盘回收站。",
+     "只想清 C 盘、保留其他盘回收站的，用命令方式更精确。"
+    ],
+    "commands": [
+     {
+      "label": "清空 C 盘回收站（不可恢复）",
+      "cmd": "Clear-RecycleBin -DriveLetter C -Force"
+     }
+    ],
+    "open_path": "C:\\$Recycle.Bin",
+    "open_note": "回收站是系统受保护目录，直接浏览只会看到内部命名文件——正确方式是打开桌面「回收站」图标查看原始文件名。",
+    "openable": false,
+    "trash_paths": []
+   },
+   {
+    "title": "Android 模拟器虚拟设备（AVD）",
+    "size": "约 11.1 GB",
+    "path": "C:\\Users\\lhbac\\.android\\avd\\Medium_Phone.avd",
+    "type": "虚拟机镜像",
+    "desc": "模拟器设备目录，主体是 userdata 镜像与 snapshots 快照。这是你装过的 App、登录状态和快照，删掉等于把手机恢复出厂。",
+    "risk": "删除 AVD 会丢失模拟器内的一切数据（应用、登录、截图），但不影响 Android Studio 与真机调试。",
+    "steps": [
+     "还在用模拟器：Android Studio → Device Manager → Wipe Data 清空数据分区，或只删快照（丢掉「秒开」状态，保留系统与应用）。",
+     "不再用模拟器：Device Manager 选中设备 → Delete，会把镜像一起删干净。",
+     "只想临时省空间：删 snapshots 目录，设备数据不动（可用下面的按钮移入回收站）。"
+    ],
+    "commands": [],
+    "open_path": "C:\\Users\\lhbac\\.android\\avd\\Medium_Phone.avd",
+    "open_note": "",
+    "openable": true,
+    "trash_paths": [
+     "C:\\Users\\lhbac\\.android\\avd\\Medium_Phone.avd\\snapshots"
+    ]
+   },
+   {
+    "title": "腾讯系应用数据（微信 / 会议 / WeGame）",
+    "size": "约 3.2 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\Tencent",
+    "type": "应用数据",
+    "desc": "微信的本地数据与聊天文件、腾讯会议录制与缓存、WeGame 数据都算在内。属于「删了会心疼」的数据，不建议整目录处理。",
+    "risk": "直接删目录可能导致微信需要重新登录、聊天记录无法预览。",
+    "steps": [
+     "微信内清理：设置 → 通用 → 存储空间 → 管理，按会话或文件类型删除缓存与大文件，最安全。",
+     "腾讯会议：设置 → 录制与存储，用官方「清理缓存」入口。",
+     "要彻底搬走：微信 设置 → 文件管理 → 更改存储位置到其他盘，新文件不再占系统盘。"
+    ],
+    "commands": [],
+    "open_path": "C:\\Users\\lhbac\\AppData\\Roaming\\Tencent",
+    "open_note": "",
+    "openable": true,
+    "trash_paths": []
+   },
+   {
+    "title": "浏览器站点数据与扩展",
+    "size": "约 4.4 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default 等 13 个位置",
+    "type": "浏览器数据",
+    "desc": "各网站的 IndexedDB 本地库（含离线内容）、扩展本体与扩展活动日志。这部分不是缓存，删了会有登录状态与扩展的连带影响。",
+    "risk": "清站点数据会让部分网页应用（在线文档、网盘）退出登录或需重新同步；扩展本体删掉等于卸载。",
+    "steps": [
+     "浏览器里 Ctrl+Shift+Del → 时间范围「所有时间」→ 只勾「Cookie 及其他网站数据」，清站点数据但保留书签、密码与扩展。",
+     "不想留的扩展去 edge://extensions 或 chrome://extensions 逐个删除，比手删目录干净。",
+     "扩展活动日志（ExtensionActivityEdge）可在浏览器完全关闭后单独删，无副作用。"
+    ],
+    "commands": [],
+    "open_path": "C:\\Users\\lhbac\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\IndexedDB",
+    "open_note": "",
+    "openable": true,
+    "trash_paths": []
+   },
+   {
+    "title": "剪映安装与草稿数据",
+    "size": "约 2.4 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\JianyingPro",
+    "type": "应用数据",
+    "desc": "Apps（多版本程序本体，升级后旧版本会残留）+ User Data（草稿、素材索引、缓存）。",
+    "risk": "删 Apps 里的旧版本目录可能让剪映打不开，别手删；草稿是真实创作内容。",
+    "steps": [
+     "剪映内：设置 → 缓存管理 → 清理缓存（清预览与代理文件，不影响草稿）。",
+     "草稿想省系统盘：设置 → 草稿位置 → 改到其他盘，再手动搬已有草稿文件夹。",
+     "程序本体不要动，交给剪映自己的更新 / 卸载流程。"
+    ],
+    "commands": [],
+    "open_path": "C:\\Users\\lhbac\\AppData\\Local\\JianyingPro",
+    "open_note": "",
+    "openable": true,
+    "trash_paths": []
+   },
+   {
+    "title": "全局 npm 包安装目录",
+    "size": "约 1.9 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\npm",
+    "type": "开发资产",
+    "desc": "npm -g 装在这里的全局命令行工具（node_modules 本体），不是缓存，删了工具就没了。",
+    "risk": "整目录删除会让所有全局命令失效，且不会有回收站以外的补救手段。",
+    "steps": [
+     "先看清单：npm ls -g --depth=0，把不再用的工具名记下来。",
+     "逐个正规卸载：npm uninstall -g <包名>，比删目录干净。",
+     "缓存占空间请走「npm 全局缓存」那张绿灯卡，不要动这里。"
+    ],
+    "commands": [],
+    "open_path": "C:\\Users\\lhbac\\AppData\\Roaming\\npm",
+    "open_note": "",
+    "openable": true,
+    "trash_paths": []
+   },
+   {
+    "title": ".codex",
+    "size": "约 1.8 GB",
+    "path": "C:\\Users\\lhbac\\.codex",
+    "type": "应用数据",
+    "desc": "命令行与编辑器工具的配置、插件、会话历史、运行日志与二进制运行时混在一起。其中 logs / traces / .tmp / binaries 属于可再生的部分，sessions / settings 是真实数据。",
+    "risk": "删掉 sessions、projects、connectors 配置会丢失会话历史与登录状态。",
+    "steps": [
+     "先下钻看构成（脚本 probe.py 直接指向该目录），分清 logs / traces / .tmp 与 sessions / settings。",
+     "只删日志与临时产物：logs、traces、.tmp、crash 报告这类目录可以直接清。",
+     "binaries / plugins 删掉后工具会重新下载或需要重装，不建议手删。"
+    ],
+    "commands": [],
+    "open_path": "C:\\Users\\lhbac\\.codex",
+    "open_note": "",
+    "openable": true,
+    "trash_paths": []
+   },
+   {
+    "title": ".workbuddy",
+    "size": "约 1.4 GB",
+    "path": "C:\\Users\\lhbac\\.workbuddy",
+    "type": "应用数据",
+    "desc": "命令行与编辑器工具的配置、插件、会话历史、运行日志与二进制运行时混在一起。其中 logs / traces / .tmp / binaries 属于可再生的部分，sessions / settings 是真实数据。",
+    "risk": "删掉 sessions、projects、connectors 配置会丢失会话历史与登录状态。",
+    "steps": [
+     "先下钻看构成（脚本 probe.py 直接指向该目录），分清 logs / traces / .tmp 与 sessions / settings。",
+     "只删日志与临时产物：logs、traces、.tmp、crash 报告这类目录可以直接清。",
+     "binaries / plugins 删掉后工具会重新下载或需要重装，不建议手删。"
+    ],
+    "commands": [],
+    "open_path": "C:\\Users\\lhbac\\.workbuddy",
+    "open_note": "",
+    "openable": true,
+    "trash_paths": []
+   },
+   {
+    "title": ".trae-cn",
+    "size": "约 1.9 GB",
+    "path": "C:\\Users\\lhbac\\.trae-cn",
+    "type": "应用数据",
+    "desc": "命令行与编辑器工具的配置、插件、会话历史、运行日志与二进制运行时混在一起。其中 logs / traces / .tmp / binaries 属于可再生的部分，sessions / settings 是真实数据。",
+    "risk": "删掉 sessions、projects、connectors 配置会丢失会话历史与登录状态。",
+    "steps": [
+     "先下钻看构成（脚本 probe.py 直接指向该目录），分清 logs / traces / .tmp 与 sessions / settings。",
+     "只删日志与临时产物：logs、traces、.tmp、crash 报告这类目录可以直接清。",
+     "binaries / plugins 删掉后工具会重新下载或需要重装，不建议手删。"
+    ],
+    "commands": [],
+    "open_path": "C:\\Users\\lhbac\\.trae-cn",
+    "open_note": "",
+    "openable": true,
+    "trash_paths": []
+   },
+   {
+    "title": "NVIDIA Corporation",
+    "size": "约 5.0 GB",
+    "path": "C:\\ProgramData\\NVIDIA Corporation",
+    "type": "待判断",
+    "desc": "位于ProgramData下的一级目录，约 5.0 GB。扫描时没有命中任何已知缓存规则，多半是某个应用的数据、素材或你自己的文件，需要打开看一眼再决定。",
+    "risk": "不清楚内容前不要整目录删除，可能包含个人数据或应用运行必需的文件。",
+    "steps": [
+     "在资源管理器打开，按「大小」排序看清楚里面是什么（图片/视频/安装包/数据库）。",
+     "能对应到具体应用的，优先用应用内的「清理缓存 / 更改存储位置」功能。",
+     "确认是纯素材且不常用，剪到其他盘归档，而不是删除。"
+    ],
+    "open_path": "C:\\ProgramData\\NVIDIA Corporation",
+    "openable": true,
+    "commands": [],
+    "trash_paths": []
+   },
+   {
+    "title": "OpenAI",
+    "size": "约 1.8 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\OpenAI",
+    "type": "待判断",
+    "desc": "位于AppData\\Local下的一级目录，约 1.8 GB。扫描时没有命中任何已知缓存规则，多半是某个应用的数据、素材或你自己的文件，需要打开看一眼再决定。",
+    "risk": "不清楚内容前不要整目录删除，可能包含个人数据或应用运行必需的文件。",
+    "steps": [
+     "在资源管理器打开，按「大小」排序看清楚里面是什么（图片/视频/安装包/数据库）。",
+     "能对应到具体应用的，优先用应用内的「清理缓存 / 更改存储位置」功能。",
+     "确认是纯素材且不常用，剪到其他盘归档，而不是删除。"
+    ],
+    "open_path": "C:\\Users\\lhbac\\AppData\\Local\\OpenAI",
+    "openable": true,
+    "commands": [],
+    "trash_paths": []
+   },
+   {
+    "title": "Adobe",
+    "size": "约 1.6 GB",
+    "path": "C:\\ProgramData\\Adobe",
+    "type": "待判断",
+    "desc": "位于ProgramData下的一级目录，约 1.6 GB。扫描时没有命中任何已知缓存规则，多半是某个应用的数据、素材或你自己的文件，需要打开看一眼再决定。",
+    "risk": "不清楚内容前不要整目录删除，可能包含个人数据或应用运行必需的文件。",
+    "steps": [
+     "在资源管理器打开，按「大小」排序看清楚里面是什么（图片/视频/安装包/数据库）。",
+     "能对应到具体应用的，优先用应用内的「清理缓存 / 更改存储位置」功能。",
+     "确认是纯素材且不常用，剪到其他盘归档，而不是删除。"
+    ],
+    "open_path": "C:\\ProgramData\\Adobe",
+    "openable": true,
+    "commands": [],
+    "trash_paths": []
+   },
+   {
+    "title": "ima.copilot",
+    "size": "约 1.5 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Local\\ima.copilot",
+    "type": "待判断",
+    "desc": "位于AppData\\Local下的一级目录，约 1.5 GB。扫描时没有命中任何已知缓存规则，多半是某个应用的数据、素材或你自己的文件，需要打开看一眼再决定。",
+    "risk": "不清楚内容前不要整目录删除，可能包含个人数据或应用运行必需的文件。",
+    "steps": [
+     "在资源管理器打开，按「大小」排序看清楚里面是什么（图片/视频/安装包/数据库）。",
+     "能对应到具体应用的，优先用应用内的「清理缓存 / 更改存储位置」功能。",
+     "确认是纯素材且不常用，剪到其他盘归档，而不是删除。"
+    ],
+    "open_path": "C:\\Users\\lhbac\\AppData\\Local\\ima.copilot",
+    "openable": true,
+    "commands": [],
+    "trash_paths": []
+   },
+   {
+    "title": "NVIDIA",
+    "size": "约 1.2 GB",
+    "path": "C:\\ProgramData\\NVIDIA",
+    "type": "待判断",
+    "desc": "位于ProgramData下的一级目录，约 1.2 GB。扫描时没有命中任何已知缓存规则，多半是某个应用的数据、素材或你自己的文件，需要打开看一眼再决定。",
+    "risk": "不清楚内容前不要整目录删除，可能包含个人数据或应用运行必需的文件。",
+    "steps": [
+     "在资源管理器打开，按「大小」排序看清楚里面是什么（图片/视频/安装包/数据库）。",
+     "能对应到具体应用的，优先用应用内的「清理缓存 / 更改存储位置」功能。",
+     "确认是纯素材且不常用，剪到其他盘归档，而不是删除。"
+    ],
+    "open_path": "C:\\ProgramData\\NVIDIA",
+    "openable": true,
+    "commands": [],
+    "trash_paths": []
+   },
+   {
+    "title": "QQEX",
+    "size": "约 1.2 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\QQEX",
+    "type": "待判断",
+    "desc": "位于AppData\\Roaming下的一级目录，约 1.2 GB。扫描时没有命中任何已知缓存规则，多半是某个应用的数据、素材或你自己的文件，需要打开看一眼再决定。",
+    "risk": "不清楚内容前不要整目录删除，可能包含个人数据或应用运行必需的文件。",
+    "steps": [
+     "在资源管理器打开，按「大小」排序看清楚里面是什么（图片/视频/安装包/数据库）。",
+     "能对应到具体应用的，优先用应用内的「清理缓存 / 更改存储位置」功能。",
+     "确认是纯素材且不常用，剪到其他盘归档，而不是删除。"
+    ],
+    "open_path": "C:\\Users\\lhbac\\AppData\\Roaming\\QQEX",
+    "openable": true,
+    "commands": [],
+    "trash_paths": []
+   },
+   {
+    "title": "work-review",
+    "size": "约 1.2 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Roaming\\work-review",
+    "type": "待判断",
+    "desc": "位于AppData\\Roaming下的一级目录，约 1.2 GB。扫描时没有命中任何已知缓存规则，多半是某个应用的数据、素材或你自己的文件，需要打开看一眼再决定。",
+    "risk": "不清楚内容前不要整目录删除，可能包含个人数据或应用运行必需的文件。",
+    "steps": [
+     "在资源管理器打开，按「大小」排序看清楚里面是什么（图片/视频/安装包/数据库）。",
+     "能对应到具体应用的，优先用应用内的「清理缓存 / 更改存储位置」功能。",
+     "确认是纯素材且不常用，剪到其他盘归档，而不是删除。"
+    ],
+    "open_path": "C:\\Users\\lhbac\\AppData\\Roaming\\work-review",
+    "openable": true,
+    "commands": [],
+    "trash_paths": []
+   },
+   {
+    "title": "oneClick",
+    "size": "约 1.0 GB",
+    "path": "C:\\ProgramData\\oneClick",
+    "type": "待判断",
+    "desc": "位于ProgramData下的一级目录，约 1.0 GB。扫描时没有命中任何已知缓存规则，多半是某个应用的数据、素材或你自己的文件，需要打开看一眼再决定。",
+    "risk": "不清楚内容前不要整目录删除，可能包含个人数据或应用运行必需的文件。",
+    "steps": [
+     "在资源管理器打开，按「大小」排序看清楚里面是什么（图片/视频/安装包/数据库）。",
+     "能对应到具体应用的，优先用应用内的「清理缓存 / 更改存储位置」功能。",
+     "确认是纯素材且不常用，剪到其他盘归档，而不是删除。"
+    ],
+    "open_path": "C:\\ProgramData\\oneClick",
+    "openable": true,
+    "commands": [],
+    "trash_paths": []
+   }
+  ],
+  "red": [
+   {
+    "title": "Windows\\Installer 补丁缓存",
+    "size": "约 3.0 GB",
+    "path": "C:\\Windows\\Installer",
+    "type": "系统资产",
+    "desc": "Office、Adobe、NVIDIA 等大型软件的 MSI/MSP 安装与补丁包缓存。Windows 靠这些文件做「修复 / 卸载 / 更新回滚」。",
+    "risk": "手删会导致对应软件无法修复、无法卸载、更新失败，且没有回收站可退——典型的「看着能删、删了就哭」。",
+    "indirect_release": [
+     "用 PatchCleaner / WICleaner 这类工具，只删「已无对应程序的孤儿补丁」，可安全回收部分空间。",
+     "先把不再用的大软件（Office / Adobe 系）正常卸载，其补丁缓存才会被判为孤儿。",
+     "系统盘紧张时优先考虑迁移页面文件、清回收站，而不是动这个目录。"
+    ],
+    "commands": [],
+    "openable": false,
+    "app_paths": []
+   },
+   {
+    "title": "AndroidStudio 旧版本配置（2025.1.2）",
+    "size": "约 0.8 GB",
+    "path": "C:\\Users\\lhbac\\AppData\\Local/Google\\AndroidStudio2025.1.2",
+    "type": "应用残留",
+    "desc": "本机已装更新的 2026.1.3 版本，这里还留着旧版本的配置与索引缓存。",
+    "risk": "若还会回到旧版本打开工程，删掉后需要重建索引（耗时但不丢工程）。",
+    "indirect_release": [
+     "确认只用新版后，直接删掉旧版本配置目录即可（配置不在程序目录里，不影响已装 IDE）。",
+     "更稳妥：先重命名为 .bak，用几天没问题再删。",
+     "只想清索引又想保留配置：只删该目录下的 caches / index 子目录。"
+    ],
+    "commands": [],
+    "app_paths": [
+     "C:\\Users\\lhbac\\AppData\\Local/Google\\AndroidStudio2025.1.2"
+    ],
+    "openable": true,
+    "open_label": "在资源管理器打开",
+    "open_hint": "打开的是旧版配置目录本身，确认后可直接删除该文件夹（不影响已安装的新版）。"
+   }
+  ]
+ }
+}
